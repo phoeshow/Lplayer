@@ -1,7 +1,6 @@
 <template>
   <div id="l-player">
     <audio id="player"></audio>
-    <button @click="play">点击播放</button>
   </div>
 </template>
 
@@ -40,11 +39,9 @@
     -moz-osx-font-smoothing: grayscale;
     text-align: center;
     color: #2c3e50;
-    border:1px solid #CCCCCC;
     width: 200px;
     height: 100px;
-    border-radius: 4px;
-    background: #fff;
+    background: rgba(0, 0, 0, 0.8);
     box-shadow: 0 0 8px 0 rgba(0,0,0,.3);
   }
 </style>
