@@ -73,6 +73,7 @@ class Player {
   setProgress (progress) {
     let duration = this.player.duration
     this.player.currentTime = duration * progress
+    return this
   }
 }
 
