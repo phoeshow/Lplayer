@@ -6,8 +6,19 @@
     </div>
     <div class="wrap-main">
       <!-- 主控制区 -->
-      <div class="wrap-control">
-
+      <div class="wrap-control cl">
+        <div class="wrap-play-control">
+          <!-- 播放控制 -->
+        </div>
+        <div class="wrap-music-info">
+          <!-- 音乐信息 -->
+        </div>
+        <div class="wrap-playlist">
+          <!-- 播放列表 -->
+        </div>
+        <div class="wrap-vol-control">
+          <!-- 声音控制 -->
+        </div>
       </div>
       <div class="wrap-progress">
 
@@ -34,8 +45,11 @@
     computed: {
 
     },
-    porps: {
-
+    props: {
+      music: {
+        type: Object,
+        required: true
+      }
     },
     mounted () {
       this.player = new Player('#player')
@@ -101,7 +115,17 @@
 
   .wrap-progress{
     height: 10px;
-    background: #eee;
+    background: #212121;
+  }
+
+  .wrap-play-control,
+  .wrap-music-info{
+    float: left;
+  }
+
+  .wrap-vol-control,
+  .wrap-playlist{
+    float: right;
   }
 
 

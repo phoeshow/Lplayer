@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <Lplayer></Lplayer>
+    <Lplayer :music="music"></Lplayer>
   </div>
 </template>
 
@@ -9,6 +9,16 @@ import Lplayer from './components/Lplayer'
 
 export default {
   name: 'app',
+  data: function () {
+    return {
+      music: {
+        src: '1.mp3',
+        name: '',
+        album: '',
+        albumimg: ''
+      }
+    }
+  },
   components: {
     Lplayer
   }
