@@ -3,12 +3,14 @@
     <audio id="player" ></audio>
     <div class="wrap-album-img">
       <!-- album img -->
+      <Albumimg albumimg="123"></Albumimg>
     </div>
     <div class="wrap-main">
       <!-- 主控制区 -->
       <div class="wrap-control cl">
         <div class="wrap-play-control">
           <!-- 播放控制 -->
+          <Playcontrol></Playcontrol>
         </div>
         <div class="wrap-music-info">
           <!-- 音乐信息 -->
@@ -29,6 +31,8 @@
 
 <script>
   import Player from '../modules/core-player'
+  import Playcontrol from './Play-control'
+  import Albumimg from './Albumimg'
 
   export default {
     name: 'Lplayer',
@@ -46,13 +50,33 @@
 
     },
     props: {
+      // 传递音乐信息，可以是对象或者数组
       music: {
-        type: Object,
+        type: [Object, Array],
         required: true
+      },
+      // 播放模式，可以是'loop','single','random','oreder'中的一种
+      mode: {
+        type: String,
+        default: 'loop'
       }
     },
     mounted () {
       this.player = new Player('#player')
+    },
+    components: {
+      Playcontrol,
+      Albumimg
+    },
+    watch: {
+      music: function (music, oldval) {
+        // 检测music的类型，看看是数组还是对象
+        if (music instanceof Array) {
+
+        } else {
+
+        }
+      }
     }
   }
 
@@ -67,8 +91,6 @@
     font-family: 'Avenir', Helvetica, Arial, sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-
-
   }
 
   .cl::after{
